@@ -1,4 +1,5 @@
 # Infra-app
+![Docker Image CI](https://github.com/apecnascimento/infra-app/workflows/Docker%20Image%20CI/badge.svg?branch=master)
 
 It contains an HTTP server implementation. It responds to all HTTP requests to the URI paths `/app` and `/healthz`.
 
