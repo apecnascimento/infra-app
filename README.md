@@ -51,6 +51,7 @@ Date: Fri, 26 Jun 2020 20:14:53 GMT
 Content-Length: 0
 ```
 ## How to deploy to k8s
+K8S version 1.18
 
 ```sh
 $ kubectl apply -f k8s/namespace.yml
