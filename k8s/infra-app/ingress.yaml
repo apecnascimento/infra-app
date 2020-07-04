@@ -1,0 +1,14 @@
+apiVersion: networking.k8s.io/v1beta1
+kind: Ingress
+metadata:
+  name: infra-app-service
+  namespace: stage  
+spec:
+  rules:
+  - host: infraapp.stage
+    http:
+      paths:
+      - path: /
+        backend:
+          serviceName: infra-app-service
+          servicePort: 80
