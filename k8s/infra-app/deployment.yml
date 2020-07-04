@@ -1,0 +1,32 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: infra-app
+  namespace: stage
+spec:   
+  replicas: 5
+  strategy:
+    type: RollingUpdate
+    rollingUpdate:
+      maxSurge: 1
+      maxUnavailable: 2 
+  selector:
+    matchLabels:
+      app: infra-app
+  template:
+    metadata:
+      labels:
+        app: infra-app
+    spec:
+      containers:
+      - name: infra-app
+        image: apecnascimento/infra-app:latest
+        env:
+          - name: PORT
+            value: "3001"
+        resources:
+          limits:
+            memory: "64M"
+            cpu: "10m"
+        ports:
+        - containerPort: 3001
