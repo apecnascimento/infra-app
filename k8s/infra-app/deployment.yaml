@@ -30,3 +30,7 @@ spec:
             cpu: "10m"
         ports:
         - containerPort: 3001
+        livenessProbe:
+          httpGet:
+            path: /healthz
+            port: 3001
