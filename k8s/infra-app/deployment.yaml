@@ -31,6 +31,8 @@ spec:
         ports:
         - containerPort: 3001
         livenessProbe:
+          initialDelaySeconds: 7s
+          periodSeconds: 5s
           httpGet:
             path: /healthz
             port: 3001
